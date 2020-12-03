@@ -1,5 +1,3 @@
-import inputs from './inputs.json';
-
 // Advent of Code 2020 - Day 2
 // A program to validate passwords in a list according to their specified 'policy'
 
