@@ -9,9 +9,6 @@ interface PolicyData {
   letterToCheck: string;
 }
 
-console.log(findNumberOfValidPasswords(inputs, 'count'));
-console.log(findNumberOfValidPasswords(inputs, 'position'));
-
 /**
  * Returns the number of valid passwords in an array of [policy & password] strings
  * @param {string[]} inputs An array of [policy & password] strings
