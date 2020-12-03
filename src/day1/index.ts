@@ -1,7 +1,7 @@
-import inputs from './inputs.json';
-
 // Advent of Code 2020 - Day 1
 // A program to find two numbers in a list which sum to a given target number
+
+// TODO - Refactor for extensibility
 
 /**
  * Finds two numbers in an input array which sum to a target integer
@@ -52,7 +52,6 @@ export function findNumbers(
 
       if (targetNumber === firstEntry + secondEntry) {
         output = [firstEntry, secondEntry];
-        console.log(output);
         if (numberOfAdditions === 2) {
           return output;
         }
@@ -62,7 +61,6 @@ export function findNumbers(
 
           if (targetNumber === firstEntry + secondEntry + thirdEntry) {
             output = [firstEntry, secondEntry, thirdEntry];
-            console.log(output);
             if (numberOfAdditions === 3) {
               return output;
             }
