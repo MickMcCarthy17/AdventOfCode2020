@@ -18,21 +18,61 @@ const badInput: string[] = [
 const emptyInput: string[] = [];
 
 describe('Day 2', () => {
-  it('should return the correct number of valid passwords in a given set', () => {
-    const numberOfValidPasswords = findNumberOfValidPasswords(goodInput);
+  describe('given that the policy is defined by count', () => {
+    it('should return the correct number of valid passwords in a given set', () => {
+      const numberOfValidPasswords = findNumberOfValidPasswords(
+        goodInput,
+        'count'
+      );
 
-    expect(numberOfValidPasswords).toBe(2);
+      expect(numberOfValidPasswords).toBe(2);
+    });
+
+    it('should return zero if there are no valid passwords in the set', () => {
+      const numberOfValidPasswords = findNumberOfValidPasswords(
+        badInput,
+        'count'
+      );
+
+      expect(numberOfValidPasswords).toBe(0);
+    });
   });
 
-  it('should return zero if there are no valid passwords in the set', () => {
-    const numberOfValidPasswords = findNumberOfValidPasswords(badInput);
+  describe('given that the policy is defined by position', () => {
+    it('should return the correct number of valid passwords in a given set', () => {
+      const numberOfValidPasswords = findNumberOfValidPasswords(
+        goodInput,
+        'position'
+      );
 
-    expect(numberOfValidPasswords).toBe(0);
-  });
+      expect(numberOfValidPasswords).toBe(2);
+    });
 
-  it('should return zero if the set is empty', () => {
-    const numberOfValidPasswords = findNumberOfValidPasswords(emptyInput);
+    it('should return zero if there are no valid passwords in the set', () => {
+      const numberOfValidPasswords = findNumberOfValidPasswords(
+        badInput,
+        'position'
+      );
 
-    expect(numberOfValidPasswords).toBe(0);
+      expect(numberOfValidPasswords).toBe(0);
+    });
+
+    it('should return zero if the set is empty', () => {
+      const numberOfValidPasswords = findNumberOfValidPasswords(
+        emptyInput,
+        'count'
+      );
+
+      expect(numberOfValidPasswords).toBe(0);
+    });
+
+    it('should return zero if the policy is not recognised', () => {
+      const numberOfValidPasswords = findNumberOfValidPasswords(
+        emptyInput,
+        'some random policy'
+      );
+
+      expect(numberOfValidPasswords).toBe(0);
+    });
   });
 });
