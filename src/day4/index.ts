@@ -66,8 +66,6 @@ function checkPassportIsValid(
 ): boolean {
   const fieldsInPassport: string[] = getFieldsInPassport(passport);
 
-  // Validate all required fields are present
-
   if (requiredFields.every((i) => fieldsInPassport.includes(i))) {
     return checkDataIsValid();
   } else {
