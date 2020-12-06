@@ -69,10 +69,6 @@ export function findNumbers(
       }
     }
   }
-
-  console.warn(
-    'There are no two or three integers which sum to the target number in the input array'
-  );
   return undefined;
 }
 

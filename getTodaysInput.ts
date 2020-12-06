@@ -5,11 +5,14 @@ import { session } from './token.json';
 const baseUrl = 'https://adventofcode.com';
 const localUrl = './src/inputs';
 
-const getDay = (): number => {
+const getDay = (day?: number): number => {
   const date = new Date();
   const month = date.getMonth();
 
   if (month === 11) {
+    if (day) {
+      return day;
+    }
     return date.getDate();
   }
 
